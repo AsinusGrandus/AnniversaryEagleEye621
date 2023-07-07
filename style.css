@@ -1,26 +1,8 @@
 body {
-    background-color: rgb(92, 98, 108);
-
+    background-color: rgb(75, 80, 88);
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-span {
-    padding-top: 5px;
-    padding-bottom: 50px;
-}
-
-h1 {
-    font-size: 35px;
-    font-family: 'MinePlayer', sans-serif;
-    margin: 0 0;
-}
-
-p {
-    font-size: 25px;
-    font-family: 'MinePlayer', sans-serif; 
-    margin: 0 0;
 }
 
 div {
@@ -28,17 +10,35 @@ div {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: max-content;
 }
 
-.center {
-    display: table;
-    
+table {
+    table-layout: fixed;
+    width: 1000px;
+    padding-bottom: 30px;
+    padding-top: 5px;
 }
 
-.timer h1 {
-    display: inline-block;
-    padding: 5px;
+td {
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 35px;
+    font-family: 'TheGoodMonolith', sans-serif;
+    padding-left: 5px;
+    margin: 0 0;
+}
+
+p {
+    font-size: 25px;
+    font-family: 'Minecrafter', sans-serif;                     
+    margin: 0 0;
+}
+
+.right {
+    text-align: right;
+    padding-right: 10px;
 }
 
 .white {
