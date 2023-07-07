@@ -25,7 +25,6 @@ class Timer{
         this.minutes.innerText = `${MINUTES < 10 ? "0" + MINUTES: MINUTES} ${MINUTES != 1 ? "minutes": "minute" }`;
         this.seconds.innerText = `${SECONDS < 10 ? "0" + SECONDS: SECONDS} ${SECONDS != 1 ? "seconds" : "second" }`;
     }
-
 }
 
 const interval = setInterval(() => {
@@ -37,7 +36,6 @@ const interval = setInterval(() => {
     const until = document.getElementById("until");
     until.innerText = `Time until ${yearssince} ${yearssince == 1 ? 'st': yearssince == 2 ? 'nd': 'th'} anniversary`;
 
-    
     if (((anniversary - new Date()) / 1000) <= 10 && !isPlaying){
         audio.play();
         isPlaying = true; // Play the audio once. We assume the user refreshes the site before next anniversary.
