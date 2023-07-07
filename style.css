@@ -1,0 +1,50 @@
+body {
+    background-color: rgb(92, 98, 108);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span {
+    padding-top: 5px;
+    padding-bottom: 50px;
+}
+
+h1 {
+    font-size: 35px;
+    font-family: 'MinePlayer', sans-serif;
+    margin: 0 0;
+}
+
+p {
+    font-size: 25px;
+    font-family: 'MinePlayer', sans-serif; 
+    margin: 0 0;
+}
+
+div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: max-content;
+}
+
+.center {
+    display: table;
+    
+}
+
+.timer h1 {
+    display: inline-block;
+    padding: 5px;
+}
+
+.white {
+    color: white;
+}
+
+.red {
+    color: red;
+}
