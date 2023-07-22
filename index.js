@@ -1,4 +1,6 @@
-const LAST_MESSAGE_DATE = new Date('July 22, 2021 21:38:21');
+// const LAST_MESSAGE_DATE = new Date('July 22, 2021 21:38:21');
+const LAST_MESSAGE_DATE = new Date(Date.UTC(2021, 6, 22, 21, 38, 21));
+
 const audio = new Audio('assets/outro-meme.mp3');
 let isPlaying = false;
 
@@ -40,10 +42,11 @@ class Timer{
 }
 
 const interval = setInterval(() => {
-    const isBefore = new Date().setFullYear(LAST_MESSAGE_DATE.getFullYear()) < LAST_MESSAGE_DATE;
+    const isBefore = new Date(new Date().toUTCString()).setFullYear(LAST_MESSAGE_DATE.getUTCFullYear()) < LAST_MESSAGE_DATE;
     const factor = isBefore ? 0: 1;
-    const yearssince = new Date().getFullYear() - LAST_MESSAGE_DATE.getFullYear() + factor;
-    const anniversary = new Date(`July 22, ${LAST_MESSAGE_DATE.getFullYear() + yearssince} 21:38:21`);
+    const yearssince = new Date().getUTCFullYear() - LAST_MESSAGE_DATE.getUTCFullYear() + factor;
+    
+    const anniversary = new Date(Date.UTC(LAST_MESSAGE_DATE.getFullYear() + yearssince, 6, 22, 21, 38, 21));
 
     const until = document.getElementById("until");
     until.innerText = `Time until ${yearssince}${yearssince == 1 ? 'st': yearssince == 2 ? 'nd': 'th'} anniversary`;
@@ -59,8 +62,8 @@ const interval = setInterval(() => {
         jsConfetti.addConfetti();
     }
 
-    const countdown = new Timer((anniversary - new Date()) / 1000, 2);
-    const timer = new Timer((new Date() - LAST_MESSAGE_DATE) / 1000, 0);
+    const countdown = new Timer((anniversary - new Date(new Date().toUTCString())) / 1000, 2);
+    const timer = new Timer((new Date(new Date().toUTCString()) - LAST_MESSAGE_DATE) / 1000, 0);
 
     countdown.updateDisplay(false);
     timer.updateDisplay(false);
